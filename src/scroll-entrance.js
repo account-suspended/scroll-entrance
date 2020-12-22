@@ -2,12 +2,12 @@
 (function() {
 
       //Create the object for the entrance plugin
-      entrance = {};
+      entrance = (typeof entrance == "object") ? entrance : {};
 
       //Set up defaults
-      entrance.duration = "1000";
-      entrance.distance = "200";
-      entrance.heightOffset = 200;
+      entrance.duration = ( !!entrance.duration ) ? entrance.duration : 1000;
+      entrance.distance = ( !!entrance.distance ) ? entrance.distance : 200;
+      entrance.heightOffset = ( !!entrance.heightOffset ) ? entrance.heightOffset : 200;
 
       entrance.isElemInView = function(elem) {
 
